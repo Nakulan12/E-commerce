@@ -92,19 +92,32 @@
   }
 
   .animate-fade-in {
-    animation: fadeIn 0.5s ease-in-out;
+    animation: fadeIn 0.8s ease-in-out forwards;
+    opacity: 0;
   }
 
   .animate-slide-up {
-    animation: slideUp 0.5s ease-out;
+    animation: slideUp 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(30px);
   }
 
   .animate-slide-in-left {
-    animation: slideInLeft 0.6s ease-out;
+    animation: slideInLeft 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(-30px);
   }
 
   .animate-slide-in-right {
-    animation: slideInRight 0.6s ease-out;
+    animation: slideInRight 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateX(30px);
+  }
+
+  .animate-scale-in {
+    animation: scaleIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: scale(0.9);
   }
 
   .fade-in {
@@ -243,6 +256,43 @@ body {
   animation: spin 2s linear infinite;
 }
 
+/* Enhanced Button Styles - Fixed White Button Issue */
+.btn-primary {
+  @apply bg-blue-600 text-white border-blue-600 hover:bg-blue-700 hover:border-blue-700;
+}
+
+.btn-secondary {
+  @apply bg-gray-600 text-white border-gray-600 hover:bg-gray-700 hover:border-gray-700;
+}
+
+.btn-outline {
+  @apply bg-transparent border-2 hover:bg-opacity-10;
+}
+
+/* Button component fixes */
+button[class*="bg-white"] {
+  @apply text-gray-900 !important;
+}
+
+button[class*="text-white"] {
+  @apply bg-blue-600 border-blue-600 !important;
+}
+
+button[class*="border-white"] {
+  @apply border-2 !important;
+}
+
+/* Ensure all buttons have proper contrast */
+.btn,
+button {
+  @apply font-medium transition-all duration-300;
+}
+
+.btn:hover,
+button:hover {
+  @apply transform scale-105 shadow-lg;
+}
+
 @keyframes spin {
   0% {
     transform: rotate(0deg);
@@ -263,7 +313,7 @@ body {
 
 @keyframes slideUp {
   from {
-    transform: translateY(20px);
+    transform: translateY(30px);
     opacity: 0;
   }
   to {
@@ -274,7 +324,7 @@ body {
 
 @keyframes slideInLeft {
   from {
-    transform: translateX(-20px);
+    transform: translateX(-30px);
     opacity: 0;
   }
   to {
@@ -285,11 +335,22 @@ body {
 
 @keyframes slideInRight {
   from {
-    transform: translateX(20px);
+    transform: translateX(30px);
     opacity: 0;
   }
   to {
     transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    transform: scale(0.9);
+    opacity: 0;
+  }
+  to {
+    transform: scale(1);
     opacity: 1;
   }
 }
@@ -593,6 +654,38 @@ body {
   width: 100%;
 }
 
+/* Carousel specific styles */
+.carousel-container {
+  position: relative;
+  overflow: hidden;
+}
+
+.carousel-slide {
+  transition: transform 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.carousel-indicator {
+  transition: all 0.3s ease;
+}
+
+.carousel-indicator.active {
+  transform: scale(1.2);
+}
+
+/* Enhanced hover effects */
+.hover-lift {
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.hover-lift:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 20px rgba(59, 130, 246, 0.3);
+}
+
 @media (max-width: 768px) {
   .whatsapp-float {
     width: 50px;
@@ -609,6 +702,13 @@ body {
   .hero-gradient {
     background: linear-gradient(180deg, #1e3a8a 0%, #3b82f6 50%, #60a5fa 100%);
   }
+
+  .animate-slide-up,
+  .animate-slide-in-left,
+  .animate-slide-in-right,
+  .animate-scale-in {
+    animation-delay: 0s !important;
+  }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -616,12 +716,14 @@ body {
   .animate-slide-up,
   .animate-slide-in-left,
   .animate-slide-in-right,
+  .animate-scale-in,
   .card-hover,
   .service-card,
   .project-card,
   .project-image,
   .testimonial-card,
-  .whatsapp-float {
+  .whatsapp-float,
+  .carousel-slide {
     animation: none;
     transition: none;
   }
