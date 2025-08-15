@@ -1,6 +1,6 @@
 "use client"
 
-import { CheckCircle, ArrowRight, Zap, Settings, Shield, Clock } from "lucide-react"
+import { CheckCircle, ArrowRight, Zap, Settings, Shield, Wrench, Building } from "lucide-react"
 import { Link } from "react-router-dom"
 import { Button } from "../components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "../components/ui/card"
@@ -10,102 +10,133 @@ const Services = () => {
   const services = [
     {
       id: 1,
-      title: "Electrical Installation",
-      description: "Complete electrical installation services for residential, commercial, and industrial properties.",
-      image: "/services/installation-service.jpg",
+      title: "Design Engineering",
+      description: "Comprehensive electrical design solutions from concept to implementation.",
+      image: "/electrical-engineering-power-systems.png",
       icon: <Zap className="h-8 w-8 text-primary-600" />,
       features: [
-        "Residential wiring and rewiring",
-        "Commercial electrical systems",
-        "Industrial power distribution",
-        "Panel upgrades and installations",
-        "Lighting system design",
-        "Emergency power systems",
-      ],
-      pricing: "Starting from ₹5,000",
-    },
-    {
-      id: 2,
-      title: "Smart Home Automation",
-      description:
-        "Transform your home with intelligent automation systems for comfort, security, and energy efficiency.",
-      image: "/services/smart-home-service.jpg",
-      icon: <Settings className="h-8 w-8 text-primary-600" />,
-      features: [
-        "Smart lighting control",
-        "Automated climate control",
-        "Security system integration",
-        "Voice control setup",
-        "Mobile app configuration",
-        "Energy monitoring systems",
-      ],
-      pricing: "Starting from ₹25,000",
-    },
-    {
-      id: 3,
-      title: "Maintenance & Repair",
-      description:
-        "Professional maintenance and repair services to keep your electrical systems running safely and efficiently.",
-      image: "/services/maintenance-service.jpg",
-      icon: <Shield className="h-8 w-8 text-primary-600" />,
-      features: [
-        "Preventive maintenance programs",
-        "Emergency repair services",
-        "Electrical safety inspections",
-        "Equipment troubleshooting",
-        "Power quality analysis",
-        "Compliance testing",
-      ],
-      pricing: "Starting from ₹2,000",
-    },
-    {
-      id: 4,
-      title: "Industrial Automation",
-      description:
-        "Advanced automation solutions for manufacturing and industrial processes using PLC and SCADA systems.",
-      image: "/industrial-automation-factory.png",
-      icon: <Settings className="h-8 w-8 text-primary-600" />,
-      features: [
-        "PLC programming and installation",
-        "SCADA system development",
-        "HMI design and implementation",
-        "Motor control systems",
-        "Process automation",
-        "Industrial IoT integration",
+        "Design Drafting",
+        "Single Line Diagram Preparation",
+        "General Arrangement",
+        "Schematic Diagrams",
+        "Bill Of Materials Preparation",
+        "Busbar / BBT Design",
+        "Key Single Line Diagrams",
       ],
       pricing: "Custom Quote",
     },
     {
-      id: 5,
-      title: "Emergency Services",
-      description: "24/7 emergency electrical services for urgent repairs and power restoration needs.",
-      image: "/emergency-electrical.png",
-      icon: <Clock className="h-8 w-8 text-primary-600" />,
+      id: 2,
+      title: "Cable Engineering",
+      description: "Complete cable engineering solutions for industrial and commercial applications.",
+      image: "/copper-wire.png",
+      icon: <Settings className="h-8 w-8 text-primary-600" />,
       features: [
-        "24/7 emergency response",
-        "Power outage restoration",
-        "Electrical fault diagnosis",
-        "Safety hazard resolution",
-        "Temporary power solutions",
-        "Emergency lighting systems",
+        "Cable Sizing",
+        "Cable Glands & Lugs",
+        "Cable Schedules",
+        "Interconnection Details",
+        "Loop Wiring Diagram",
+        "Cable Termination Schedules",
+        "Cable Tray Routing & Sizing",
       ],
-      pricing: "₹1,500/hour",
+      pricing: "Starting from ₹15,000",
+    },
+    {
+      id: 3,
+      title: "Equipment Engineering",
+      description: "Specialized equipment engineering for electrical and instrumentation systems.",
+      image: "/industrial-automation-factory.png",
+      icon: <Wrench className="h-8 w-8 text-primary-600" />,
+      features: [
+        "ECR Equipment Layout",
+        "Electrical Equipment Engineering",
+        "Instrumentation Engineering",
+        "Layout Engineering",
+        "Cable Gallery Design",
+        "Tray Routing & BOQ",
+      ],
+      pricing: "Custom Quote",
+    },
+    {
+      id: 4,
+      title: "Earthing & Lightning",
+      description: "Professional earthing and lightning protection system design and installation.",
+      image: "/electrical-installation.png",
+      icon: <Shield className="h-8 w-8 text-primary-600" />,
+      features: [
+        "Earthing Design & Sizing",
+        "BOM Preparation",
+        "Layouts and Typical Installations",
+        "Lightning Protection Systems",
+        "Safety Compliance",
+        "Testing & Commissioning",
+      ],
+      pricing: "Starting from ₹25,000",
+    },
+    {
+      id: 5,
+      title: "PLC and Panel Engineering",
+      description: "Advanced PLC/DCS panel engineering and automation solutions.",
+      image: "/smart-city-infrastructure.png",
+      icon: <Settings className="h-8 w-8 text-primary-600" />,
+      features: [
+        "PLC/DCS Panel GA & IGA Drawings",
+        "System Architecture",
+        "IO Allocation",
+        "Power & Control Schematic Diagrams",
+        "Wiring Table & Interconnection Details",
+        "MCT Engineering",
+      ],
+      pricing: "Custom Quote",
     },
     {
       id: 6,
-      title: "Renewable Energy Solutions",
-      description: "Sustainable energy solutions including solar panel installations and energy storage systems.",
-      image: "/renewable-energy-grid.png",
+      title: "E-House Services",
+      description: "Complete E-House solutions from sizing to supply and installation.",
+      image: "/modern-engineering-construction.png",
+      icon: <Building className="h-8 w-8 text-primary-600" />,
+      features: [
+        "E-House Sizing",
+        "E-House Supplying",
+        "Panel Location Layout",
+        "Electrical Integration",
+        "Testing & Commissioning",
+        "Maintenance Support",
+      ],
+      pricing: "Custom Quote",
+    },
+    {
+      id: 7,
+      title: "Lighting Engineering",
+      description: "Professional lighting design and engineering solutions.",
+      image: "/led-bulb.png",
       icon: <Zap className="h-8 w-8 text-primary-600" />,
       features: [
-        "Solar panel installation",
-        "Battery storage systems",
-        "Grid-tie inverters",
-        "Energy monitoring",
-        "Net metering setup",
-        "Maintenance programs",
+        "Lighting Load Calculations",
+        "Distribution Layouts",
+        "Typical Connections",
+        "Dialux Calculations",
+        "Energy Efficient Solutions",
+        "Maintenance Programs",
       ],
-      pricing: "Starting from ₹75,000",
+      pricing: "Starting from ₹10,000",
+    },
+    {
+      id: 8,
+      title: "Winding Services",
+      description: "Comprehensive motor and transformer winding services.",
+      image: "/electrical-repair.png",
+      icon: <Wrench className="h-8 w-8 text-primary-600" />,
+      features: [
+        "All Types of Motor Winding",
+        "Control Trafo Winding",
+        "DC Motor Winding",
+        "Motor Connection Winding",
+        "Motor Lathe Works",
+        "Annual Maintenance (AMC)",
+      ],
+      pricing: "Starting from ₹5,000",
     },
   ]
 
@@ -117,37 +148,42 @@ const Services = () => {
     },
     {
       step: "02",
-      title: "Planning",
-      description: "Detailed planning and design phase with technical specifications and timeline.",
+      title: "Design",
+      description: "Detailed engineering design and technical specifications development.",
     },
     {
       step: "03",
-      title: "Implementation",
-      description: "Professional installation and implementation by our certified technicians.",
+      title: "Engineering",
+      description: "Complete engineering solutions with drawings and documentation.",
     },
     {
       step: "04",
-      title: "Testing",
-      description: "Comprehensive testing and quality assurance to ensure optimal performance.",
+      title: "Supply",
+      description: "Procurement and supply of all required materials and equipment.",
     },
     {
       step: "05",
+      title: "Implementation",
+      description: "Professional installation and commissioning by certified engineers.",
+    },
+    {
+      step: "06",
       title: "Support",
-      description: "Ongoing support and maintenance to keep your systems running smoothly.",
+      description: "Ongoing maintenance and technical support services.",
     },
   ]
 
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
-      <section className="bg-gradient-to-br from-primary-900 to-primary-700 text-white py-20">
+      <section className="bg-gradient-to-br from-blue-900 to-blue-700 text-white py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center">
             <Badge className="mb-4 bg-white/20 text-white border-white/30">Our Services</Badge>
-            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Professional Electrical Services</h1>
+            <h1 className="text-4xl lg:text-5xl font-bold mb-6">Professional Electrical Engineering Services</h1>
             <p className="text-xl max-w-3xl mx-auto text-gray-200">
-              Comprehensive electrical solutions for residential, commercial, and industrial needs with expert
-              craftsmanship and reliable service.
+              Comprehensive electrical engineering solutions from design to commissioning with 45+ years of expertise in
+              industrial automation and power systems.
             </p>
           </div>
         </div>
@@ -159,8 +195,8 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Service Offerings</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              From basic installations to complex automation systems, we provide complete electrical solutions tailored
-              to your needs.
+              End-to-end electrical engineering solutions tailored for cement plants, steel plants, oil & gas
+              facilities, and industrial automation systems.
             </p>
           </div>
 
@@ -191,9 +227,9 @@ const Services = () => {
                     ))}
                   </ul>
                   <div className="flex items-center justify-between">
-                    <span className="text-lg font-semibold text-primary-600">{service.pricing}</span>
+                    <span className="text-lg font-semibold text-blue-600">{service.pricing}</span>
                     <Link to="/contact">
-                      <Button size="sm">
+                      <Button size="sm" className="bg-blue-600 hover:bg-blue-700">
                         Get Quote
                         <ArrowRight className="ml-2 h-4 w-4" />
                       </Button>
@@ -212,19 +248,19 @@ const Services = () => {
           <div className="text-center mb-16">
             <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Our Process</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We follow a systematic approach to ensure every project is completed to the highest standards.
+              Single point responsibility with end-to-end solutions encompassing all major project functions.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-5 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             {processSteps.map((process, index) => (
               <div key={index} className="text-center">
                 <div className="relative mb-6">
-                  <div className="w-16 h-16 bg-primary-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">
+                  <div className="w-16 h-16 bg-blue-600 text-white rounded-full flex items-center justify-center text-xl font-bold mx-auto">
                     {process.step}
                   </div>
                   {index < processSteps.length - 1 && (
-                    <div className="hidden md:block absolute top-8 left-full w-full h-0.5 bg-gray-300 -translate-y-1/2"></div>
+                    <div className="hidden lg:block absolute top-8 left-full w-full h-0.5 bg-gray-300 -translate-y-1/2"></div>
                   )}
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">{process.title}</h3>
@@ -235,64 +271,79 @@ const Services = () => {
         </div>
       </section>
 
-      {/* Why Choose Us */}
-      <section className="py-20 bg-gray-50">
+      {/* Software Expertise */}
+      <section className="py-20 bg-blue-50">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Why Choose Engenix?</h2>
+            <h2 className="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Software Expertise</h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              We combine technical expertise with exceptional service to deliver results that exceed expectations.
+              Advanced software tools for precise electrical design and engineering solutions.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                icon: <Shield className="h-8 w-8 text-primary-600" />,
-                title: "Licensed & Insured",
-                description:
-                  "Fully licensed electricians with comprehensive insurance coverage for your peace of mind.",
-              },
-              {
-                icon: <Clock className="h-8 w-8 text-primary-600" />,
-                title: "24/7 Emergency Service",
-                description: "Round-the-clock emergency services to handle urgent electrical issues promptly.",
-              },
-              {
-                icon: <CheckCircle className="h-8 w-8 text-primary-600" />,
-                title: "Quality Guarantee",
-                description: "We stand behind our work with comprehensive warranties and quality guarantees.",
-              },
-              {
-                icon: <Zap className="h-8 w-8 text-primary-600" />,
-                title: "Latest Technology",
-                description: "Using cutting-edge tools and techniques for efficient and reliable electrical solutions.",
-              },
-            ].map((benefit, index) => (
-              <Card key={index} className="text-center hover:shadow-lg transition-shadow">
-                <CardHeader>
-                  <div className="mx-auto mb-4">{benefit.icon}</div>
-                  <CardTitle className="text-xl">{benefit.title}</CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <CardDescription>{benefit.description}</CardDescription>
-                </CardContent>
-              </Card>
-            ))}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+            <div>
+              <h3 className="text-2xl font-bold text-gray-900 mb-6">Professional Design Tools</h3>
+              <div className="space-y-4">
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-4" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">E PLAN</h4>
+                    <p className="text-gray-600">Advanced electrical design and documentation</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-4" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">AutoCAD</h4>
+                    <p className="text-gray-600">Precision drafting and technical drawings</p>
+                  </div>
+                </div>
+                <div className="flex items-center">
+                  <CheckCircle className="h-6 w-6 text-green-500 mr-4" />
+                  <div>
+                    <h4 className="font-semibold text-gray-900">Dialux</h4>
+                    <p className="text-gray-600">Professional lighting calculations and design</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="bg-white p-8 rounded-lg shadow-lg">
+              <h3 className="text-xl font-bold text-gray-900 mb-4">Key Capabilities</h3>
+              <ul className="space-y-3">
+                <li className="flex items-center">
+                  <Zap className="h-5 w-5 text-blue-600 mr-3" />
+                  <span>3D Electrical Modeling</span>
+                </li>
+                <li className="flex items-center">
+                  <Zap className="h-5 w-5 text-blue-600 mr-3" />
+                  <span>Automated Documentation</span>
+                </li>
+                <li className="flex items-center">
+                  <Zap className="h-5 w-5 text-blue-600 mr-3" />
+                  <span>Standards Compliance</span>
+                </li>
+                <li className="flex items-center">
+                  <Zap className="h-5 w-5 text-blue-600 mr-3" />
+                  <span>Project Collaboration</span>
+                </li>
+              </ul>
+            </div>
           </div>
         </div>
       </section>
 
       {/* CTA Section */}
-      <section className="py-20 bg-primary-600">
+      <section className="py-20 bg-blue-600">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl lg:text-4xl font-bold text-white mb-4">Ready to Get Started?</h2>
           <p className="text-xl text-gray-200 mb-8 max-w-2xl mx-auto">
-            Contact us today for a free consultation and let our experts help you with your electrical needs.
+            Contact us today for a free consultation and let our experts help you with your electrical engineering
+            needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link to="/contact">
-              <Button size="lg" className="bg-white text-primary-600 hover:bg-gray-100">
+              <Button size="lg" className="bg-white text-blue-600 hover:bg-gray-100">
                 Get Free Quote
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
@@ -301,7 +352,7 @@ const Services = () => {
               <Button
                 size="lg"
                 variant="outline"
-                className="border-white text-white hover:bg-white hover:text-primary-600 bg-transparent"
+                className="border-white text-white hover:bg-white hover:text-blue-600 bg-transparent"
               >
                 Browse Products
               </Button>
