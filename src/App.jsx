@@ -28,16 +28,8 @@ function App() {
             <AuthProvider>
               <CartProvider>
                 <div className="min-h-screen bg-white">
-                  <Navbar />
                   <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/services" element={<Services />} />
-                    <Route path="/projects" element={<Projects />} />
-                    <Route path="/about" element={<About />} />
-                    <Route path="/contact" element={<Contact />} />
-                    <Route path="/products" element={<Products />} />
-                    <Route path="/login" element={<CustomerLogin />} />
-                    <Route path="/cart" element={<Cart />} />
+                    {/* Admin Routes (without navbar/footer) */}
                     <Route path="/admin/login" element={<AdminLogin />} />
                     <Route
                       path="/admin/dashboard"
@@ -47,9 +39,29 @@ function App() {
                         </ProtectedRoute>
                       }
                     />
+
+                    {/* Public Routes (with navbar/footer) */}
+                    <Route
+                      path="/*"
+                      element={
+                        <>
+                          <Navbar />
+                          <Routes>
+                            <Route path="/" element={<Home />} />
+                            <Route path="/services" element={<Services />} />
+                            <Route path="/projects" element={<Projects />} />
+                            <Route path="/about" element={<About />} />
+                            <Route path="/contact" element={<Contact />} />
+                            <Route path="/products" element={<Products />} />
+                            <Route path="/login" element={<CustomerLogin />} />
+                            <Route path="/cart" element={<Cart />} />
+                          </Routes>
+                          <Footer />
+                          <WhatsAppFloat />
+                        </>
+                      }
+                    />
                   </Routes>
-                  <Footer />
-                  <WhatsAppFloat />
                 </div>
               </CartProvider>
             </AuthProvider>
